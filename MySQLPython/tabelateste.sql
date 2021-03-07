@@ -1,0 +1,10 @@
+CREATE TABLE `canteiro` ( `canteiroid` INTEGER(11) NOT NULL AUTO_INCREMENT, `nome` CHAR(20) COLLATE DEFAULT NULL, `luzdiaria` INTEGER(2) DEFAULT NULL, `agua` INTEGER(3) DEFAULT NULL, PRIMARY KEY (`canteiroid`), UNIQUE KEY `canteiroid` (`canteiroid`) ) CREATE TABLE `funcionario` ( `funcid` INTEGER(11) NOT NULL AUTO_INCREMENT, `nome` CHAR(80) COLLATE NOT NULL DEFAULT '', `idade` INTEGER(2) UNSIGNED DEFAULT NULL, PRIMARY KEY (`funcid`), UNIQUE KEY `funcid` (`funcid`) ) CREATE TABLE `planta` ( `ID` INTEGER(11) NOT NULL AUTO_INCREMENT, `nome` CHAR(20) COLLATE NOT NULL DEFAULT '', `luzdiaria` INTEGER(2) DEFAULT NULL, `agura` INTEGER(2) DEFAULT NULL, `peso` INTEGER(2) DEFAULT NULL, PRIMARY KEY (`ID`), UNIQUE KEY `ID` (`ID`) ) CREATE TABLE `plantio` ( `plantioID` INTEGER(11) NOT NULL AUTO_INCREMENT, `plantaID` INTEGER(11) NOT NULL, `funcID` INTEGER(11) NOT NULL , `canteiroID` INTEGER(11) NOT NULL, `Data` DATE DEFAULT NULL, `sementes` INTEGER(4) DEFAULT 0 NOT NULL, PRIMARY KEY (`plantioID`), FOREIGN KEY(`plantaID`) REFERENCES planta(ID), FOREIGN KEY(`funcID`) REFERENCES funcionario(funcID), FOREIGN KEY(`plantaID`) REFERENCES canteiro(canteiroID), UNIQUE KEY `ID` (`plantioID`) ) CREATE TABLE `colhido` ( `colhidoID` INTEGER(11) NOT NULL AUTO_INCREMENT, `plantaID` INTEGER(11) NOT NULL, `funcID` INTEGER(11) NOT NULL , `canteiroID` INTEGER(11) NOT NULL, `Data` DATE DEFAULT NULL, `quantidade` INTEGER(4) DEFAULT 0 NOT NULL, `peso` DOUBLE(4,3) DEFAULT 0 NOT NULL, PRIMARY KEY (`colhidoID`), FOREIGN KEY(`plantaID`) REFERENCES planta(ID), FOREIGN KEY(`funcID`) REFERENCES funcionario(funcID), FOREIGN KEY(`plantaID`) REFERENCES canteiro(canteiroID), UNIQUE KEY `ID` (`colhidoID`) )
+INSERT INTO `planta` (`nome`,`luzdiaria`,`agua`,`peso`)
+VALUES ('tomate',0.03,0.03,0.03);
+
+INSERT INTO `funcionario`(`funcid`,`nome`,`idade`)
+VALUES (25,'Gabriella Fonseca Ribeiro',20);
+
+INSERT INTO
+`plantio`(`plantioID`,`plantaID`,`funcID`,`canteiroID`,`Data`,`sementes`)
+VALUES (15,1,25,4,2011-06-07,8);
