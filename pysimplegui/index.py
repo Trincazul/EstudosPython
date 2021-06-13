@@ -1,5 +1,5 @@
 import PySimpleGUI as sg
-
+# já existem métodos melhores para esse código
 sg.theme('DarkPurple')   # Tipos de temas já existentes na lib
 # dentro da caixa do programa
 layout = [  [sg.Text('Exemplo de texto')],
