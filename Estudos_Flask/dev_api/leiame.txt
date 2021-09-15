@@ -1,0 +1,6 @@
+	Um exemplo criado de uma rest API feita com Flask
+adiciona desenvolvedor, deleta e modifica e retorna todos por API
+
+somente rodar o servidor python app.py
+
+um exemplo simples de CRUD em API com lista pré definida como desenvolvedores[]
