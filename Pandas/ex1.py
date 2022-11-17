@@ -17,6 +17,9 @@ dados_vendas_anuais = [{'Ano': 2011, 'Valor_vendas': 119000, 'Qtde_itens': 430, 
                       {'Ano': 2012, 'Valor_vendas': 260000, 'Qtde_itens': 640, 'Mes': 'Abr'},
                       {'Ano': 2012, 'Valor_vendas': 268000, 'Qtde_itens': 649, 'Mes': 'Mai'}]
 
+# exemplo de como abrir um arquivo e renomear as colunas
+# adicionar header=1 para omitir o cabeçalho anterior
+df1 = pd.read_csv('df_1.csv', names=['Ano', 'Valor_vendas', 'Qtde_itens', 'Mes'], header=1)
 
 
 # inserindo várias linhas através da lista e do append
