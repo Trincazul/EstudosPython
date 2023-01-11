@@ -35,7 +35,7 @@ df_market["Rating"].describe()
 df_market.info()
 
 # retornar o formato do dataframe, primeiro termo quantidade de linhas e segundo total de colunas.
- df_market.shape
+df_market.shape
 # (1000, 17)
  
 # Ordenação baseando-se em coluna - ordem crescente na coluna Total

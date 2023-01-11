@@ -34,6 +34,16 @@ df.index = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 # inserindo uma nova linha com o .loc
 df.loc['t'] = [2012, 273000, 657, 'Jun']
 
+# localizando e filtrando linhas de uma coluna com pandas
+# utilizando o loc
+df_filtered = df.loc[df['A'] == 2]
+
+# Utilizando um método alternativo query
+df_filtered = df.query('A == 2')
+
+# Filtrando com varios parametros da pra usar a função isin
+df_filtered = df.loc[df['A'].isin([2, 3])]
+
 # ### Alterando linhas com o iloc
 df.iloc[19]
 
